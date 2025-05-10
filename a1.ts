@@ -26,3 +26,34 @@ function concatenateArrays<T> (...arrays: T[][]): T[]{
 }
 const concatenate = concatenateArrays(['a', 'f'], ['T', 'H'])
 console.log(concatenate)
+
+
+
+
+class Vehicle {
+    private make: string;
+    private year: number;
+
+    constructor(make: string, year: number){
+        this.make = make;
+        this.year = year
+    }
+    public getInfo(): string {
+        return (`Make:${this.make}, Year: ${this.year}`)
+    }
+}
+
+class Car extends Vehicle{
+    private model: string
+    constructor (make: string, year: number, model: string){
+        super(make, year)
+        this.model = model
+    }
+    public getModel(): string{
+        return (`Model: ${this.model}`)
+    }
+}
+
+const MyCar = new Car ('Toyeoa', 2021, 'Corolla');
+console.log(MyCar.getInfo())
+console.log(MyCar.getModel())
