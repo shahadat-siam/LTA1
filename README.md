@@ -6,16 +6,18 @@
 ### 1 Basic Usage
 Both interface and type can be used to define the shape of an object.
 
-Using interface:
+#### Using interface:
 ```ts
 interface User {
   name: string;
   age: number;
 }
 
-Using type:
+#### Using type:
+
 type User = {
   name: string;
   age: number;
 }
+```
 They both do the same thing here.
