@@ -1,6 +1,7 @@
 ## Blog Post 1: Interface vs Type - What's the difference?
 
 #### I Explore the key difference between `interface` and `type` in typescript, complete with examples, use cases and best practices
+
 ---
 
 ### 1. Basic Usage
@@ -48,8 +49,7 @@ type Employee = Person & {
 };
 ```
 Both work well, but interface is cleaner when working with object inheritance.
-
----
+ 
 
 
 ### 3. Declaration Merging
@@ -69,16 +69,17 @@ const myCar: Car = {
 };
 ```
 If you try this with type, it will throw an error. 
+ 
 
----
-
-### Using type with a Union & tuple
+### 4. Using type with a Union & tuple
 only `type` have this oportunity 
 ``` ts
 type ID = number | string;  
 type Point = [number, number]; 
 ```
 You can’t do this with interface. 
+
+--- 
 
 ### Which One Should You Use?
 
@@ -95,8 +96,6 @@ You can’t do this with interface.
 - You need to use union, intersection, tuples, or primitives.
 
 - You want more flexibility in defining types.
-
----
 
 
 ### Final Thoughts
