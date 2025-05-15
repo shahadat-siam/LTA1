@@ -103,3 +103,53 @@ You can’t do this with interface.
 Both interface and type are powerful tools in TypeScript. While they have similarities, they also have unique features that make them better suited for specific use cases. Understanding their differences helps you write cleaner, scalable, and more maintainable code.
 
 ---
+
+
+
+
+
+## Blog Post 2: Understanding Union and Intersection Types in TypeScript
+#### Typescripts has many features, `union` and `intersection` types help you write flexible yet safe code. Let’s dive into what they are and how you can use them effectively.
+
+
+### Union Types (|):
+
+Union types allow a variable to hold more than one type. This is useful when a value can be one of several types.
+
+``` ts
+type Status = "success" | "error" | "loading";
+
+function showStatus(status: Status) {
+  console.log("Current status:", status);
+}
+
+showStatus("success"); 
+showStatus("error");
+```
+
+
+### Intersection Types (&)
+
+Intersection types combine multiple types into one. The resulting type has all properties from the combined types.
+
+``` ts
+type Person = {
+  name: string;
+  age: number;
+};
+
+type Employee = {
+  employeeId: number;
+  department: string;
+};
+
+type Staff = Person & Employee;
+
+const staffMember: Staff = {
+  name: "Alice",
+  age: 30,
+  employeeId: 101,
+  department: "Engineering"
+};
+
+console.log(staffMember);
